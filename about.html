@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>STEPUP SNEAKERS — About Us</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg-dark:#030305;
+      --gold:#FFD166;
+      --gold-soft:#D4AF37;
+      --muted:#bdbdbd;
+    }
+
+    *{box-sizing:border-box;}
+    body{
+      margin:0;
+      font-family:"Montserrat",sans-serif;
+      background:linear-gradient(180deg,var(--bg-dark),#0a0a0b 80%);
+      color:var(--gold);
+      scroll-behavior:smooth;
+    }
+
+    header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:22px 36px;
+      position:sticky;
+      top:0;
+      background:#0a0a0b;
+      border-bottom:1px solid rgba(212,175,55,0.1);
+      z-index:100;
+    }
+
+    .logo{
+      font-family:"Playfair Display",serif;
+      font-size:28px;
+      font-weight:900;
+      color:var(--gold);
+    }
+
+    nav a{
+      color:var(--muted);
+      text-decoration:none;
+      margin-left:20px;
+      font-weight:600;
+      transition:0.3s;
+    }
+
+    nav a:hover{
+      color:var(--gold);
+    }
+
+    main{
+      padding:80px 6vw;
+      max-width:1000px;
+      margin:0 auto;
+    }
+
+    .hero{
+      text-align:center;
+      margin-bottom:60px;
+      opacity:0;
+      transform:translateY(40px);
+      transition:1s ease-out;
+    }
+
+    .hero.visible{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    .hero h1{
+      font-family:"Playfair Display",serif;
+      font-size:52px;
+      margin-bottom:20px;
+      line-height:1.2;
+    }
+
+    .hero p{
+      font-size:20px;
+      color:var(--gold-soft);
+      max-width:700px;
+      margin:0 auto;
+    }
+
+    .section{
+      margin-bottom:50px;
+      opacity:0;
+      transform:translateY(30px);
+      transition:0.8s ease-out;
+    }
+
+    .section.visible{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    .section h2{
+      font-family:"Playfair Display",serif;
+      font-size:32px;
+      margin-bottom:20px;
+      color:var(--gold);
+      position:relative;
+    }
+
+    .section h2::after{
+      content:'';
+      display:block;
+      width:60px;
+      height:3px;
+      background:var(--gold-soft);
+      margin-top:6px;
+      border-radius:2px;
+    }
+
+    .section p{
+      color:var(--gold-soft);
+      line-height:1.7;
+      font-size:18px;
+    }
+
+    .highlight-box{
+      background:rgba(255,255,255,0.03);
+      border:1px solid rgba(212,175,55,0.08);
+      border-radius:14px;
+      padding:25px 20px;
+      margin-top:25px;
+      transition:0.3s;
+    }
+
+    .highlight-box:hover{
+      background:rgba(212,175,55,0.1);
+      color:#000;
+      transform:scale(1.02);
+    }
+
+    footer{
+      text-align:center;
+      padding:30px;
+      color:var(--muted);
+      border-top:1px solid rgba(212,175,55,0.1);
+      margin-top:80px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">STEPUP</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="hero">
+      <h1>Step Into Excellence</h1>
+      <p>Where fashion meets comfort, and every step makes a statement. Welcome to STEPUP SNEAKERS — your ultimate footwear experience.</p>
+    </div>
+
+    <div class="section">
+      <h2>Our Story</h2>
+      <p>
+        STEPUP SNEAKERS was founded to revolutionize the way people experience footwear. Combining premium materials, cutting-edge design, and unmatched comfort, we create sneakers that not only look stunning but feel incredible on every step.
+      </p>
+      <div class="highlight-box">
+        Every sneaker is crafted with passion, precision, and a touch of gold — because your steps deserve excellence.
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Our Mission</h2>
+      <p>
+        Our mission is to empower individuals to walk with confidence. We aim to be the go-to brand for those who refuse to compromise on style or quality. With STEPUP SNEAKERS, every journey becomes a statement of personality and passion.
+      </p>
+      <div class="highlight-box">
+         Comfort, style, and performance — all in one sneaker.
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Why Choose Us?</h2>
+      <p>
+        STEPUP SNEAKERS is not just a brand, it's a lifestyle. Our customers enjoy innovative designs, unparalleled comfort, and a sense of confidence in every step. We believe in making every journey memorable and stylish.
+      </p>
+      <div class="highlight-box">
+         Join thousands of happy customers stepping up their game.
+      </div>
+    </div>
+
+    <!-- Our Values Section -->
+    <div class="section">
+      <h2>Our Values</h2>
+      <p>
+        At STEPUP SNEAKERS, our values guide every design, every pair, and every customer experience. We believe in:
+      </p>
+      <div class="highlight-box">
+        <ul style="margin:0;padding-left:20px;color:var(--gold-soft);font-size:18px;line-height:1.7">
+          <li><strong style="color:var(--gold)">Innovation</strong> — creating fresh designs that set trends.</li>
+          <li><strong style="color:var(--gold)">Quality</strong> — ensuring durability and comfort in every step.</li>
+          <li><strong style="color:var(--gold)">Affordability</strong> — making luxury accessible to everyone.</li>
+          <li><strong style="color:var(--gold)">Community</strong> — empowering customers to express themselves confidently.</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    © <span id="yr"></span> STEPUP SNEAKERS | All Rights Reserved
+  </footer>
+
+  <script>
+    document.getElementById("yr").textContent = new Date().getFullYear();
+
+    // Scroll animation
+    const sections = document.querySelectorAll('.section, .hero');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {threshold:0.2});
+
+    sections.forEach(section => observer.observe(section));
+  </script>
+</body>
+</html>

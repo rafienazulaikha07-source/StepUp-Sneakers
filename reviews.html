@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ms">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>STEPUP SNEAKERS — Reviews</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg-dark:#030305;--gold:#FFD166;--gold-soft:#D4AF37;--muted:#bdbdbd}
+    body{margin:0;font-family:"Montserrat",sans-serif;background:linear-gradient(180deg,var(--bg-dark),#0a0a0b 80%);color:var(--gold)}
+    header{display:flex;justify-content:space-between;align-items:center;padding:22px 36px;position:sticky;top:0;background:#0a0a0b;border-bottom:1px solid rgba(212,175,55,0.1)}
+    .logo{font-family:"Playfair Display",serif;font-size:28px;font-weight:900;color:var(--gold)}
+    nav a{color:var(--muted);text-decoration:none;margin-left:20px;font-weight:600}
+    nav a:hover{color:var(--gold)}
+    main{padding:60px 6vw}
+    h1{font-family:"Playfair Display",serif;font-size:42px;text-align:center;margin:0 0 40px}
+    
+    /* Reviews layout */
+    .reviews{display:flex;flex-direction:column;gap:20px;max-width:700px;margin:0 auto}
+    .card{background:rgba(255,255,255,0.03);border:1px solid rgba(212,175,55,0.08);border-radius:14px;padding:20px;text-align:left}
+    .card p{color:var(--gold-soft);font-style:italic;margin:0}
+    
+    .back{text-align:center;margin-top:40px}
+    .btn{display:inline-block;padding:10px 18px;background:linear-gradient(180deg,var(--gold),var(--gold-soft));color:#0a0a0a;font-weight:700;border-radius:10px;text-decoration:none}
+    footer{text-align:center;padding:30px;color:var(--muted);border-top:1px solid rgba(212,175,55,0.1)}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">STEPUP</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Customer Reviews</h1>
+    <div class="reviews">
+      <div class="card"><p>"Comfy and stylish — my go-to for campus days." — Amir</p></div>
+      <div class="card"><p>"Amazing grip and fit. Loved the student discount." — Sara</p></div>
+      <div class="card"><p>"Fast delivery and the shoe looks premium IRL." — Nur</p></div>
+      <div class="card"><p>"Quality is top-notch, feels like luxury but affordable." — Daniel</p></div>
+      <div class="card"><p>"The cushioning is so good, I can walk all day comfortably." — Mei Ling</p></div>
+      <div class="card"><p>"Exclusive designs, I always get compliments wearing them." — Hakim</p></div>
+    </div>
+    <div class="back"><a href="index.html" class="btn">← Back to Home</a></div>
+  </main>
+
+  <footer>© <span id="yr"></span> STEPUP SNEAKERS | All Rights Reserved</footer>
+  <script>document.getElementById("yr").textContent=new Date().getFullYear();</script>
+</body>
+</html>

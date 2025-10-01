@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>STEPUP SNEAKERS — Checkout</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg-dark:#030305;
+      --gold:#FFD166;
+      --gold-soft:#D4AF37;
+      --muted:#bdbdbd;
+    }
+
+    body{
+      margin:0;
+      font-family:"Montserrat",sans-serif;
+      background:linear-gradient(180deg,var(--bg-dark),#0a0a0b 80%);
+      color:var(--gold);
+    }
+
+    header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:22px 36px;
+      position:sticky;
+      top:0;
+      background:#0a0a0b;
+      border-bottom:1px solid rgba(212,175,55,0.1);
+    }
+
+    .logo{
+      font-family:"Playfair Display",serif;
+      font-size:28px;
+      font-weight:900;
+      color:var(--gold);
+    }
+
+    nav a{
+      color:var(--muted);
+      text-decoration:none;
+      margin-left:20px;
+      font-weight:600;
+    }
+
+    nav a:hover{
+      color:var(--gold);
+    }
+
+    main{
+      padding:60px 6vw;
+    }
+
+    h1{
+      font-family:"Playfair Display",serif;
+      font-size:42px;
+      text-align:center;
+      margin:0 0 30px;
+    }
+
+    table{
+      width:100%;
+      border-collapse:collapse;
+      margin-bottom:30px;
+    }
+
+    th,td{
+      border:1px solid var(--gold-soft);
+      padding:10px;
+      text-align:center;
+    }
+
+    th{
+      background:rgba(255,255,255,0.05);
+    }
+
+    .total{
+      text-align:right;
+      font-size:20px;
+      font-weight:700;
+      margin-top:10px;
+    }
+
+    form{
+      max-width:600px;
+      margin:40px auto;
+      background:rgba(255,255,255,0.03);
+      padding:20px;
+      border-radius:12px;
+      border:1px solid rgba(212,175,55,0.2);
+    }
+
+    form label{
+      display:block;
+      margin:12px 0 6px;
+      color:var(--gold);
+    }
+
+    form input, form select{
+      width:100%;
+      padding:10px;
+      border-radius:8px;
+      border:1px solid rgba(212,175,55,0.2);
+      background:#111;
+      color:var(--gold);
+    }
+
+    form button{
+      margin-top:20px;
+      width:100%;
+      padding:12px;
+      background:linear-gradient(180deg,var(--gold),var(--gold-soft));
+      color:#000;
+      font-weight:800;
+      border:none;
+      border-radius:10px;
+      cursor:pointer;
+    }
+
+    form button:hover{
+      opacity:0.9;
+    }
+
+    footer{
+      text-align:center;
+      padding:30px;
+      color:var(--muted);
+      border-top:1px solid rgba(212,175,55,0.1);
+    }
+
+    .removeBtn{
+      background:#D9534F;
+      color:#fff;
+      border:none;
+      border-radius:5px;
+      cursor:pointer;
+      padding:5px 10px;
+    }
+    .removeBtn:hover{
+      opacity:0.8;
+    }
+
+    /* Payment extra fields styling */
+    #paymentDetails label{
+      margin-top:10px;
+    }
+
+    #paymentDetails input, #paymentDetails select{
+      margin-bottom:10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">STEPUP</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="about.html">About</a>
+      <a href="checkout.html">Cart</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Checkout</h1>
+
+    <!-- Cart Table -->
+    <table id="cartTable">
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Price (RM)</th>
+          <th>Quantity</th>
+          <th>Subtotal (RM)</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <div class="total">Total: RM <span id="totalAmount">0</span></div>
+
+    <!-- Checkout Form -->
+    <form id="checkoutForm">
+      <h2 style="text-align:center;font-family:'Playfair Display',serif;">Shipping Information</h2>
+
+      <label for="name">Full Name</label>
+      <input type="text" id="name" required>
+
+      <label for="address">Address</label>
+      <input type="text" id="address" required>
+
+      <label for="phone">Phone Number</label>
+      <input type="text" id="phone" required>
+
+      <label for="payment">Payment Method</label>
+      <select id="payment" required>
+        <option value="">-- Select --</option>
+        <option value="COD">Cash on Delivery</option>
+        <option value="Online Banking">Online Banking</option>
+        <option value="Card">Credit/Debit Card</option>
+      </select>
+
+      <!-- Payment extra fields -->
+      <div id="paymentDetails" style="display:none; margin-top:15px;">
+        <!-- Bank selection -->
+        <div id="bankSelect" style="display:none;">
+          <label for="bank">Select Bank</label>
+          <select id="bank">
+            <option value="">-- Select Bank --</option>
+            <option value="Maybank">Maybank</option>
+            <option value="CIMB">CIMB</option>
+            <option value="Public Bank">Public Bank</option>
+            <option value="RHB">RHB</option>
+          </select>
+        </div>
+
+        <!-- Card details -->
+        <div id="cardDetails" style="display:none;">
+          <label for="cardNumber">Card Number</label>
+          <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456">
+
+          <label for="expiry">Expiry Date</label>
+          <input type="month" id="expiry">
+
+          <label for="cvv">CVV</label>
+          <input type="text" id="cvv" placeholder="123">
+        </div>
+      </div>
+
+      <button type="submit">Confirm Order</button>
+    </form>
+  </main>
+
+  <footer>
+    © <span id="yr"></span> STEPUP SNEAKERS | All Rights Reserved
+  </footer>
+
+  <script>
+    document.getElementById("yr").textContent = new Date().getFullYear();
+
+    // Cart handling
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const tbody = document.querySelector("#cartTable tbody");
+    const totalAmount = document.getElementById("totalAmount");
+
+    function renderCart() {
+      tbody.innerHTML = "";
+      let total = 0;
+
+      cart.forEach((item, index) => {
+        let name = item.name || "Unknown Product";
+        let price = parseFloat(item.price) || 0;
+        let qty = parseInt(item.qty) || 1;
+        let subtotal = price * qty;
+        total += subtotal;
+
+        tbody.innerHTML += `
+          <tr>
+            <td>${name}</td>
+            <td>${price.toFixed(2)}</td>
+            <td>
+              <input type="number" min="1" value="${qty}" data-index="${index}" class="qtyInput" style="width:60px;text-align:center;">
+            </td>
+            <td>${subtotal.toFixed(2)}</td>
+            <td>
+              <button data-index="${index}" class="removeBtn">Remove</button>
+            </td>
+          </tr>
+        `;
+      });
+
+      totalAmount.textContent = total.toFixed(2);
+
+      document.querySelectorAll(".qtyInput").forEach(input => {
+        input.addEventListener("change", e => {
+          let idx = e.target.dataset.index;
+          let newQty = parseInt(e.target.value);
+          if (isNaN(newQty) || newQty < 1) newQty = 1;
+          cart[idx].qty = newQty;
+          localStorage.setItem("cart", JSON.stringify(cart));
+          renderCart();
+        });
+      });
+
+      document.querySelectorAll(".removeBtn").forEach(btn => {
+        btn.addEventListener("click", e => {
+          let idx = e.target.dataset.index;
+          cart.splice(idx, 1);
+          localStorage.setItem("cart", JSON.stringify(cart));
+          renderCart();
+        });
+      });
+    }
+
+    renderCart();
+
+    // Payment fields toggle
+    const paymentSelect = document.getElementById("payment");
+    const paymentDetails = document.getElementById("paymentDetails");
+    const bankSelect = document.getElementById("bankSelect");
+    const cardDetails = document.getElementById("cardDetails");
+
+    paymentSelect.addEventListener("change", () => {
+      const value = paymentSelect.value;
+      if (value === "Online Banking") {
+        paymentDetails.style.display = "block";
+        bankSelect.style.display = "block";
+        cardDetails.style.display = "none";
+      } else if (value === "Card") {
+        paymentDetails.style.display = "block";
+        bankSelect.style.display = "none";
+        cardDetails.style.display = "block";
+      } else {
+        paymentDetails.style.display = "none";
+      }
+    });
+
+    // Form submit
+    document.getElementById("checkoutForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      if (cart.length === 0) {
+        alert("Your cart is empty!");
+        return;
+      }
+
+      const name = document.getElementById("name").value;
+      const address = document.getElementById("address").value;
+      const phone = document.getElementById("phone").value;
+      const payment = paymentSelect.value;
+      const total = parseFloat(totalAmount.textContent).toFixed(2);
+
+      let extraInfo = "";
+      if(payment === "Online Banking"){
+        const bank = document.getElementById("bank").value;
+        extraInfo = `Bank: ${bank}`;
+      } else if(payment === "Card"){
+        const cardNumber = document.getElementById("cardNumber").value;
+        const expiry = document.getElementById("expiry").value;
+        const cvv = document.getElementById("cvv").value;
+        extraInfo = `Card: ${cardNumber}, Expiry: ${expiry}, CVV: ${cvv}`;
+      }
+
+      alert(`Thank you ${name}!\nYour order will be shipped to:\n${address}\nPhone: ${phone}\nPayment: ${payment}\n${extraInfo}\n\nTotal: RM${total}`);
+
+      // Clear cart and reset form
+      localStorage.removeItem("cart");
+      cart = [];
+      renderCart();
+      document.getElementById("checkoutForm").reset();
+      paymentDetails.style.display = "none";
+
+      // Redirect
+      window.location.href = "index.html";
+    });
+  </script>
+</body>
+</html>

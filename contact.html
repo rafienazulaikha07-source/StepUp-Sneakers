@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>STEPUP SNEAKERS — Contact Us</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg-dark:#030305;
+      --gold:#FFD166;
+      --gold-soft:#D4AF37;
+      --muted:#bdbdbd;
+    }
+
+    body{
+      margin:0;
+      font-family:"Montserrat",sans-serif;
+      background:linear-gradient(180deg,var(--bg-dark),#0a0a0b 80%);
+      color:var(--gold);
+    }
+
+    header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:22px 36px;
+      position:sticky;
+      top:0;
+      background:#0a0a0b;
+      border-bottom:1px solid rgba(212,175,55,0.1);
+    }
+
+    .logo{
+      font-family:"Playfair Display",serif;
+      font-size:28px;
+      font-weight:900;
+      color:var(--gold);
+    }
+
+    nav a{
+      color:var(--muted);
+      text-decoration:none;
+      margin-left:20px;
+      font-weight:600;
+    }
+
+    nav a:hover{
+      color:var(--gold);
+    }
+
+    main{
+      padding:60px 6vw;
+    }
+
+    h1{
+      font-family:"Playfair Display",serif;
+      font-size:42px;
+      text-align:center;
+      margin-bottom:30px;
+    }
+
+    .info{
+      text-align:center;
+      margin-bottom:40px;
+      font-size:16px;
+      color:var(--muted);
+    }
+
+    .contact-details{
+      text-align:center;
+      margin-bottom:30px;
+      font-size:16px;
+      color:var(--muted);
+    }
+
+    .contact-details p{
+      margin:6px 0;
+    }
+
+    /* Tukar link contact jadi gold */
+    .contact-details a{
+      color:var(--gold);
+      text-decoration:none;
+    }
+    .contact-details a:hover{
+      text-decoration:underline;
+    }
+
+    form{
+      max-width:600px;
+      margin:0 auto;
+      background:rgba(255,255,255,0.03);
+      padding:20px;
+      border-radius:12px;
+      border:1px solid rgba(212,175,55,0.2);
+    }
+
+    form label{
+      display:block;
+      margin:12px 0 6px;
+      color:var(--gold);
+    }
+
+    form input, form textarea{
+      width:100%;
+      padding:10px;
+      border-radius:8px;
+      border:1px solid rgba(212,175,55,0.2);
+      background:#111;
+      color:var(--gold);
+      resize:none;
+    }
+
+    form button{
+      margin-top:20px;
+      width:100%;
+      padding:12px;
+      background:linear-gradient(180deg,var(--gold),var(--gold-soft));
+      color:#000;
+      font-weight:800;
+      border:none;
+      border-radius:10px;
+      cursor:pointer;
+    }
+
+    form button:hover{
+      opacity:0.9;
+    }
+
+    footer{
+      text-align:center;
+      padding:30px;
+      color:var(--muted);
+      border-top:1px solid rgba(212,175,55,0.1);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">STEPUP</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Contact Us</h1>
+    <p class="info">Have a question or feedback? Fill out the form below and we’ll get back to you as soon as possible.</p>
+
+    <div class="contact-details">
+      <p>Instagram: <a href="https://www.instagram.com/stepupsenakers_" target="_blank">@stepupsenakers_</a></p>
+      <p>Email: <a href="mailto:rafienazulaikha07@gmail.com">rafienazulaikha07@gmail.com</a></p>
+      <p>Phone: <a href="tel:0134780181">013-4780181</a></p>
+    </div>
+
+    <form id="contactForm">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" required>
+
+      <label for="subject">Subject</label>
+      <input type="text" id="subject" required>
+
+      <label for="message">Message</label>
+      <textarea id="message" rows="6" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+  </main>
+
+  <footer>
+    © <span id="yr"></span> STEPUP SNEAKERS | All Rights Reserved
+  </footer>
+
+  <script>
+    document.getElementById("yr").textContent = new Date().getFullYear();
+
+    document.getElementById("contactForm").addEventListener("submit", function(e){
+      e.preventDefault();
+
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const subject = document.getElementById("subject").value;
+      const message = document.getElementById("message").value;
+
+      alert(`Thank you ${name}!\n\nWe received your message:\nSubject: ${subject}\nMessage: ${message}\n\nWe will contact you at ${email} shortly.`);
+
+      this.reset();
+    });
+  </script>
+</body>
+</html>
